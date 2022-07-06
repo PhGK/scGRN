@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+#SBATCH --job-name=createLRPau
+#SBATCH --output=/fast/users/keylpg_c/scratch/tmp/docs/LRPau-%j.txt
+#
+#SBATCH --ntasks=1
+###SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --time=0-00:20:00
+#SBATCH --mem-per-cpu=4G
+#SBATCH --partition=short
+
+##INPUTPATH=/fast/users/keylpg_c/scratch/results/LRP_values_large/epi2000_bih/raw_data/
+
+##OUTPUTPATH=/fast/users/keylpg_c/work/results/LRP_values_large/epi2000_bih/use_data/
+
+
+python3 create_LRPau.py $1 $2 $3

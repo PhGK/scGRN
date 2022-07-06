@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+INPUTPATH=/fast/users/keylpg_c/work/plots_statistics/results/epi2000_bih/use_data/
+
+
+filenames=$(ls $INPUTPATH)
+for f in $filenames
+do
+echo $f
+sbatch ~/work/plots_statistics/start_filter_highest_interactions $f
+done
