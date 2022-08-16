@@ -149,7 +149,7 @@ class Model(nn.Module):
 def train(neuralnet, train_data, test_data, train_onehot,test_onehot, epochs, lr, noise_level, weight_decay = 0.0, batch_size=50, device=tc.device('cpu')):
     nsamples, nfeatures = train_data.shape
     optimizer = tc.optim.SGD(neuralnet.parameters(), lr=lr, momentum=0.9, weight_decay=weight_decay) 
-    scheduler = ExponentialLR(optimizer, gamma = 0.99)
+    scheduler = ExponentialLR(optimizer, gamma = 0.995)
 
     criterion = LogCoshLoss() #nn.MSELoss()
     testlosses, epoch_list, network_list = [], [], []
