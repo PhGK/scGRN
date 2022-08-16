@@ -29,7 +29,7 @@ if train_new_network:
     print(train_data.shape)
 
     model = Model(input_size*2, input_size, hidden = (train_data.shape[1])*10, hidden_depth=1) # best: hidden_depth=3, train_data.shape[1]*3
-    testlosses, epoch_list, network_list= train(model, train_data, test_data, train_onehot, test_onehot, epochs=nepochs, lr = 0.01, noise_level=0.0, weight_decay = 0.0, batch_size = 25, device = tc.device("cuda:0" if cuda else "cpu"))
+    testlosses, epoch_list, network_list= train(model, train_data, test_data, train_onehot, test_onehot, epochs=nepochs, lr = 0.01, noise_level=0.0, weight_decay = 0.0, batch_size = 5, device = tc.device("cuda:0" if cuda else "cpu"))
 
     if not os.path.exists(model_path):
         os.makedirs(model_path)
